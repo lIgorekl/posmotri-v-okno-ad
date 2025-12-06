@@ -1,23 +1,23 @@
-*,
+*, /*все элементы на странице*/
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /*ширина элемента включает в себя границы и отступы*/
 }
 
 html {
-  block-size: 100%;
+  block-size: 100%; /*высота окна браузера*/
 }
 
-.page {
-  display:flex;
-  align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
+.page { /*настройка для всей страницы*/
+  display:flex; /*гибкая верстка*/
+  align-items: center; /*выравнивание*/
+  inline-size: 1200px; /*ширина страницы*/
+  block-size: 100%; /*высота окна браузера*/
+  margin: auto; /*автоматические отступы*/
+  color: #fff; /*цвет текста для всех элементов*/
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  background-color: #1b1919;
+  background-color: #1b1919; /*цвет фона*/
 }
 
 h1,
@@ -39,25 +39,25 @@ ol {
   list-style: none;
 }
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
+.visually-hidden { /*скрытый класс (для скринридера и тп)*/
+  clip: rect(0 0 0 0); /*обрезаем до полного исчезновения*/
   clip-path: inset(50%);
   height: 1px;
-  overflow: hidden;
+  overflow: hidden; /*прячем то, что вылезает за границы*/
   position: absolute;
-  white-space: nowrap;
+  white-space: nowrap; /*запретили перенос текста*/
   width: 1px;
-  border: none;
+  border: none; /*убрали рамки*/
 }
 
-.content {
-  display: flex;
-  inline-size: 100%;
-  gap: 30px;
-  margin: 0 30px;
+.content { /*основная структура контента*/
+  display: flex; /*делает дочерние элементы гибкими*/
+  inline-size: 100%; /*растягивает на всю ширину родителя*/
+  gap: 30px; /*расстояние между двумя колонками (форма и список видео)*/
+  margin: 0 30px; /*отступы с обеих сторон*/
 }
 
-.button {
+.button { /*стили кнопок*/
   border: 1px solid #fff;
   height: 34px;
   cursor: pointer;
@@ -69,22 +69,22 @@ ol {
   color:#fff;
 }
 
-.result {
-  align-self: flex-end;
+.result { /*левая колонка*/
+  align-self: flex-end; /*прижата к низу*/
 }
 
-.result__video-container {
-  position: relative;
-  width: 100%;
-  height: 386px;
-  margin-bottom: 16px;
+.result__video-container { /*контейнер для видео*/
+  position: relative; /*позволяет позиционировать элементы внутри*/
+  width: 100%; /*ширина 100% от родителя*/
+  height: 386px; /*фиксированная высота окна для видео*/
+  margin-bottom: 16px; /*отступ снизу*/
 }
 
 .result__video {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain; /*добавляет черные полосы, если видео слишком широкое или высокое*/
   object-position: center;
 }
 
@@ -95,8 +95,8 @@ ol {
   width: fit-content;
 }
 
-.search-form {
-  display:flex;
+.search-form { /*форма поиска*/
+  display:flex; /*каждый элемент прижимается к краям с равными расстояниями между ними*/
 /*  align-items: center;*/
   width: 100%;
   margin-top: 14px;
@@ -130,34 +130,30 @@ ol {
   color:#545050;
 }
 
-.content__list {
+.content__list { /*список карточек с видео*/
   position: relative;
-  height: 298px;
-  overflow: auto;
+  height: 298px; /*фиксированная высота списка*/
+  overflow: auto; /*карточек много - появляется полоса прокрутки*/
   margin-top: 23px;
-  overflow-x: hidden;
+  overflow-x: hidden; /*горизонтальная прокрутка скрыта*/
 }
 
-.content__video-card {
-  display: inline-flex;
+.content__video-card { /*карточка видео*/
+  display: inline-flex; /*flex-контейнер, но ведет себя как строчный элемент*/
   width: 100%;
 }
 
-.content__video-card-title {
+.content__video-card-title { /*адаптивные текста*/
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
   color:#fff;
   text-transform: uppercase;
-  max-width: 200px;
-
-  /*На случай увеличения количества текста нужно добавить связку 
-  и ограничить максимальную ширину заголовка  
-  Тогда при увеличении количества текста в конце будет появляться многоточие. */
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  max-width: 200px; /*максимальная ширина заголовка*/
+  text-overflow: ellipsis; /*если текст не помещается, то в конце будут ...*/
+  white-space: nowrap; /*запрет переноса на новую строку*/
+  overflow: hidden; /*скрыть все, что не поместилось*/
 }
 
 .content__video-card-description {
@@ -167,10 +163,10 @@ ol {
   color:#fff;
 }
 
-.content__video-card-thumbnail {
+.content__video-card-thumbnail { /*карточка видео*/
   width: 194px;
-  margin-left: auto;
-  object-fit: contain;
+  margin-left: auto; /*картинка прижимается к правому краю*/
+  object-fit: contain; /*сохраняет пропорции картинки*/
   object-position: center;
 }
 
@@ -186,11 +182,11 @@ ol {
   height: 33px;
 }
 
-.button:hover {
+.button:hover { /*подкеркичвание при наведении*/
   text-decoration: underline;
 }
 
-.button:active {
+.button:active { /*серый фон при нажатии*/
   background-color: #545050;
 }
 
@@ -198,7 +194,7 @@ ol {
   outline:none; 
 }
 
-.button:focus-visible {
+.button:focus-visible { /*рамка при фокусе клавишей Tab*/
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -212,13 +208,13 @@ ol {
   margin-bottom: 0;
 }
 
-.search-form__pseudo-checkbox {
+.search-form__pseudo-checkbox {  /*для псевдо-чекбокса*/
   display: block;
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
   margin-top: 1px;
-}
+} /*настоящий чекбокс скрыт, вместо него белый квадрат*/
 
 
 .search-form__checkbox-list {
@@ -232,7 +228,7 @@ ol {
   text-decoration: underline; 
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before { /*когда чекбокс отмечен*/
   content: '';
   display: block;
   position: relative; 
@@ -242,7 +238,7 @@ ol {
   height: 15px;
   text-align: center;
   background-color: #fff;
-}
+} /*если чекбокс отмечен, то добавляем внутрь квадрата белый квадрат поменьше*/
 
 .search-form__textfield:focus {
   outline: none;
@@ -274,14 +270,14 @@ ol {
   outline: none;
 }
 
-.search-form__label:has(:focus-visible) { 
+.search-form__label:has(:focus-visible) { /*выбери ВСЕ search-form__label, которые содержат внутри элемент в состоянии :focus-visible*/
   outline: 1px solid #fff; 
   outline-offset: 1px; 
 } 
 
-.search-form__textfield {
+.search-form__textfield { /*поле ввода текста*/
   width:225px;
-  appearance: none;
+  appearance: none; /*убирает нативыне стили браузера*/
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-left: none;
@@ -290,9 +286,9 @@ ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: inherit;
-  background-color: inherit;  
-}
+  color: inherit; /*наследует белый цвет от родителей*/
+  background-color: inherit; /*наследует темный фон от родителей*/
+} /*выглядит как линия сверху и снизу, без боковых границ*/
 
 .search-form__label:has(.search-form__pseudo-checkbox) {
   height: 21px;
@@ -303,18 +299,17 @@ ol {
   outline-offset: 1px;
 }
 
-/***********************************/
+/**/
 
 .content__card-link {
   display: block;
 }
 
-/*выделение первой или активной карты */
-.content__card-link_current article {
+.content__card-link_current article { /*выделение активной карточки с видео*/
   background-color: #545050;
 }
 
-.content__card-link:hover h2 {
+.content__card-link:hover h2 { /*подчеркивает все заголоки при наведении на карточку в списке*/
   text-decoration: underline;
 }
 

@@ -1,28 +1,28 @@
-.preloader {
+.preloader { /*контейнер прелоадера*/
   position: absolute;
-  inset: 0;
+  inset: 0; /*растянули на весь экран*/
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /*центр по горизонтали*/
+  align-items: center; /*центр по вертикали*/
   background: #545050;
 }
 
-.preloader-chasing-squares {
+.preloader-chasing-squares { /*задаем размер области для квадратов*/
   width: 50px;
   height: 50px;
   line-height: 19px;
 }
 
-.preloader-chasing-squares .square {
-  display: inline-block;
+.preloader-chasing-squares .square { /*один квадрат*/
+  display: inline-block; /*стоит в строке, но имеет размер*/
   width: 15px;
   height: 15px;
-  opacity: 1;
+  opacity: 1; /*полная непрозрачность*/
   background: #fff;
-  animation: focusfade 2.8s infinite;
-}
+  animation: focusfade 2.8s infinite; /*включили анимацию*/
+} /*позволяет квадратам стоять в ряд, имея ширину и высоту*/
 
-.preloader-chasing-squares .square:nth-child(2) {
+.preloader-chasing-squares .square:nth-child(2) { /*задержки для квадратов*/
   animation-delay: 0.7s;
 }
 
@@ -34,7 +34,7 @@
   animation-delay: 1.4s;
 }
 
-@keyframes focusfade {
+@keyframes focusfade { /*сама анимация*/
 
   0% {
     opacity: 0.7;
